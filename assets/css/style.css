@@ -1,0 +1,592 @@
+/*BASE*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+.flex {
+    display: flex;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.window {
+    width: 100%;
+    height: 100vh;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.canvas__hand img{
+    width: 100%;
+    height: 100%;
+}
+/*BASE END*/
+/*DEFAULT*/
+.header {
+    width: 100%;
+    height: 155px;
+    box-shadow: 1px 1px 20px #ccc;
+}
+
+.bg {
+    width: 100%;
+    height: 105px;
+    position: relative;
+}
+
+.bg p {
+    position: relative;
+    z-index: 10;
+    color: #fff;
+    font-size: 60px;
+}
+
+.bg img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.previews {
+    overflow: hidden;
+    height: 200px;
+    width: 100%;
+    background: #ccc;
+}
+
+.preview {
+    opacity: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.preview.active {
+    opacity: 1;
+}
+
+/*DEFAULT*/
+/*GENERATOR*/
+
+.generator__loader{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: #fff;
+    height: 100%;
+    display: none;
+}
+.generator__loader.active{
+    display: flex;
+}
+
+.generator__block{
+    max-width: 100%;
+    margin: 71px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.generator {
+    max-width: 100%;
+    min-height: 605px;
+
+    position: relative;
+}
+
+.generator.result {
+    height: auto;
+}
+
+.generator__main {
+    width: 60%;
+}
+
+.generator__view, .generator__cup {
+    width: 100%;
+    height: 100%;
+}
+
+.generator__setting {
+    width: 40%;
+    padding: 36px;
+}
+
+.generator__photo {
+    text-align: center;
+    height: 100%;
+}
+
+.generator__image {
+    justify-content: space-between;
+    text-align: center;
+    height: 100%;
+}
+
+.generator__text {
+    font-size: 25px;
+    text-align: left;
+    font-weight: 300;
+}
+
+.generator__text.center {
+    text-align: center;
+}
+
+.generator__info {
+    margin: 39px 0;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.generator__info span {
+    display: block;
+
+    font-weight: 300;
+}
+
+.generator__button {
+    color: #000;
+    background: #FFE500;
+    padding: 10px;
+    border: none;
+    transition: .3s;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    line-height: 29px;
+}
+
+.generator__button:hover {
+    background: #fff26e;
+}
+
+.generator__logo-buttons .generator__button {
+    width: 50%;
+    font-weight: 300;
+    font-size: 19px;
+    padding: 20px;
+    margin: 10px 0;
+}
+
+.generator__logo-buttons .generator__button {
+    background: #fff;
+}
+
+.generator__logo-buttons .generator__button.active {
+    background-color: #FFE500;
+}
+
+.generator__button-wrap button {
+    margin: 10px 0;
+}
+
+.generator__back {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 23px;
+    text-decoration: underline;
+    margin-top: 17px;
+    color: #000;
+    cursor: pointer;
+}
+
+.generator__buttons {
+    width: 100%;
+}
+
+.generator__button.resize {
+    width: 100% !important;
+    margin-top: 10px;
+}
+
+.generator__buttons-top {
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.generator__button.icon {
+    width: 59px;
+    height: 59px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.generator__button.left {
+    background: url("../img/icons/left.svg") center no-repeat;
+}
+
+.generator__button.right {
+    background: url("../img/icons/right.svg") center no-repeat;
+}
+
+.generator__button.in {
+    background: url("../img/icons/in.svg") center no-repeat;
+}
+
+.generator__button.out {
+    background: url("../img/icons/out.svg") center no-repeat;
+}
+
+.generator__button.arrowLeft {
+    background: url("../img/icons/arrow_left.svg") center no-repeat;
+}
+
+.generator__button.arrowRight {
+    background: url("../img/icons/arrow_right.svg") center no-repeat;
+}
+
+.generator__button.pause {
+    background: url("../img/icons/pause.svg") center no-repeat;
+}
+
+.generator__button.play {
+    background: url("../img/icons/play.svg") center no-repeat;
+}
+
+.generator__button.right, .generator__button.left, .generator__button.in, .generator__button.out {
+    background-size: 35px;
+    background-color: #FFE500;
+    transition: .3s;
+}
+
+.generator__buttons .generator__button:hover {
+    background-color: #fff26e;
+}
+
+.generator__view img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.generator__result {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    background-color: #fff;
+}
+
+/*RESULT*/
+.result-images {
+    padding: 16px;
+    text-align: center;
+}
+
+.result-image {
+    padding: 16px;
+    width: 100%;
+}
+
+.result-images__image {
+    width: 255px;
+    height: 191px;
+    margin: 11px 0;
+}
+
+.result-images__image:first-child {
+    margin: 0 0 11px 0;
+}
+
+.result-images__image:last-child {
+    margin: 11px 0 0 0;
+}
+
+.result-images__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.result-image__image {
+    height: 612px;
+    position: relative;
+}
+
+.result-image__image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.result__control-top {
+    margin: 40px 0;
+}
+
+.result__control-top .generator__button {
+    margin: 0 25px;
+    background-color: #FFE500;
+    padding: 30px;
+}
+
+.result__control-top .generator__button:hover {
+    background-color: #fff26e;
+}
+
+.result__control__bottom {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.result__control__bottom a {
+    margin-right: 32px;
+    cursor: pointer;
+}
+
+.result__control__bottom .generator__button {
+    border-radius: 40px;
+    padding: 10px 30px;
+}
+
+/*RESULT END*/
+/*EMAIL*/
+.generator__email{
+    margin: 65px 56px;
+    width: 100%;
+}
+.email__photos{
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.email__form{
+    max-width: 430px;
+    margin: 71px auto 0 auto;
+}
+.email__form label{
+    width: 100%;
+    margin: 8px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 23px;
+}
+.email__label-input{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.email__input{
+    position: relative;
+}
+.email__input input{
+    height: 58px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 300;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0 0 0 68px;
+}
+.email__input:after{
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 22px;
+    width: 24px;
+    height: 24px;
+}
+
+.email__input.email:after{background: url('../img/icons/email.svg') no-repeat;}
+.email__input.name:after{background: url('../img/icons/name.svg') no-repeat;}
+.email__input.phone:after{background: url('../img/icons/phone.svg') no-repeat;}
+
+.email__form .generator__button{
+    margin-top: 26px;
+    border-radius: 40px;
+    width: 100%;
+}
+
+.email__form input[type="checkbox"]{
+    background: #FFE500;
+    border-radius: 5px;
+    width: 22px;
+    height: 22px;
+    margin-right: 20px;
+}
+
+.email__label-checkbox{
+    font-weight: 400;
+    cursor: pointer;
+}
+.email__label-checkbox span{
+    font-weight: 700;
+}
+
+.email__checkbox{
+    width: 22px;
+    height: 22px;
+    border: 2px solid #FFE500;
+    display: inline-block;
+    border-radius: 5px;
+}
+.email__checkbox.active{
+    background: #FFE500 url("../img/icons/check.svg") center no-repeat;
+}
+.email__validate{
+    color: #ef4545;
+    font-size: 18px;
+    font-weight: 300 !important;
+    display: none;
+    width: 100%;
+}
+.email__validate.active{
+    display: block;
+}
+/*EMAIL END*/
+/*GENERATOR END*/
+/*ADAPTIVE*/
+@media (max-width: 942px) {
+    .generator__logo-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .generator__logo-buttons .generator__button{
+        width: 100% !important;
+    }
+
+    .bg p{
+        font-size: 23px;
+    }
+
+    .generator__logo-buttons button {
+        margin: 10px 0;
+        width: 100% !important;
+    }
+
+    .generator__result{
+        flex-direction: column;
+    }
+
+    .result-images{
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .result-images__image{
+        margin: 10px !important;
+    }
+}
+
+@media (max-width: 730px) {
+
+    .generator {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        padding: 10px;
+    }
+
+    .generator__block{
+        height: auto;
+        margin: 71px 10px;
+        padding: 10px;
+    }
+
+    .generator__setting {
+        width: 100%;
+    }
+
+    .generator__main {
+        width: 100%;
+    }
+
+    .generator__cup {
+        height: 400px;
+    }
+    .generator__logo-buttons {
+        flex-direction: row;
+    }
+
+    .generator__view {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .result-images{
+        text-align: center;
+        justify-content: center;
+        padding: 0;
+    }
+    
+    .result-images__image{
+        width: 180px;
+        height: 120px;
+    }
+
+    .result-image{
+        padding: 0;
+    }
+}
+@media (max-width: 480px){
+    .result__control-top{
+        flex-wrap: wrap;
+    }
+
+    .result__control__bottom{
+        flex-direction: column;
+    }
+
+    .result__control-top .generator__button{
+        margin: 10px;
+    }
+}
+/*ADAPTIVE END*/
+/*LOADER*/
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #FFE500 transparent #FFE500 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*LOADER END*/
